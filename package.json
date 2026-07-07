@@ -1,0 +1,28 @@
+{
+  "name": "vote",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "prisma generate",
+    "db:push": "prisma db push",
+    "db:generate": "prisma generate",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "chart.js": "^4.5.1",
+    "next": "^14.2.30",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "prisma": "^6.16.2",
+    "tailwindcss": "^3.4.14"
+  }
+}

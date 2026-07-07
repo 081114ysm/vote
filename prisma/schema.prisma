@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ElectionCategory {
+  id            String      @id
+  label         String
+  mode          String
+  candidateName String?
+  yesVotes      Int         @default(0)
+  noVotes       Int         @default(0)
+  invalidVotes   Int         @default(0)
+  updatedAt     DateTime    @updatedAt
+  candidates    Candidate[]
+}
+
+model Candidate {
+  id          String           @id @default(cuid())
+  categoryId   String
+  name        String
+  votes       Int              @default(0)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  category    ElectionCategory  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([categoryId])
+}
