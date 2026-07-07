@@ -124,7 +124,7 @@ function chartOptions() {
         ticks: {
           color: '#475569',
           font: {
-            size: 13,
+            size: 14,
             weight: '600',
           },
           maxRotation: 0,
@@ -138,7 +138,7 @@ function chartOptions() {
           stepSize: 20,
           color: '#64748b',
           font: {
-            size: 12,
+            size: 13,
           },
         },
         grid: {
@@ -169,7 +169,7 @@ function CandidateChart({ category }) {
   return (
     <div className="flex h-full min-h-0 flex-col rounded-xl border border-emerald-100 bg-white p-2">
       <div className="mb-2 flex items-center justify-between gap-2">
-        <div className="text-[15px] font-bold tracking-tight text-slate-900 md:text-[17px]">{category.label}</div>
+        <div className="text-[13px] font-bold tracking-tight text-slate-900 md:text-[14px]">{category.label}</div>
         <div className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">총 {summary.total}표</div>
       </div>
       <div className="mx-auto min-h-0 flex-1 w-[84%]">
