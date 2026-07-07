@@ -8,8 +8,13 @@
     "start": "next start",
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
     "db:generate": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && prisma db seed && next build",
     "lint": "next lint"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
