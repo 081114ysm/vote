@@ -18,7 +18,7 @@ const valueLabelPlugin = {
     const { ctx } = chart;
     ctx.save();
     ctx.fillStyle = '#166534';
-    ctx.font = '700 12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.font = '700 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
 
@@ -124,7 +124,7 @@ function chartOptions() {
         ticks: {
           color: '#475569',
           font: {
-            size: 12,
+            size: 13,
             weight: '600',
           },
           maxRotation: 0,
@@ -138,7 +138,7 @@ function chartOptions() {
           stepSize: 20,
           color: '#64748b',
           font: {
-            size: 11,
+            size: 12,
           },
         },
         grid: {
@@ -169,15 +169,15 @@ function CandidateChart({ category }) {
   return (
     <div className="flex h-full min-h-0 flex-col rounded-xl border border-emerald-100 bg-white p-2">
       <div className="mb-2 flex items-center justify-between gap-2">
-        <div className="text-sm font-bold tracking-tight text-slate-900 md:text-[15px]">{category.label}</div>
-        <div className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-semibold text-emerald-700">총 {summary.total}표</div>
+        <div className="text-[15px] font-bold tracking-tight text-slate-900 md:text-[17px]">{category.label}</div>
+        <div className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">총 {summary.total}표</div>
       </div>
       <div className="mx-auto min-h-0 flex-1 w-[84%]">
         <Bar data={data} options={options} />
       </div>
       {winnerLabel ? (
         <div className="mt-1 flex justify-end">
-          <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-bold text-emerald-900 ring-1 ring-emerald-200">
+          <span className="rounded-full bg-emerald-100 px-3 py-1 text-[11px] font-bold text-emerald-900 ring-1 ring-emerald-200">
             현재 1위: {winnerLabel}
           </span>
         </div>
