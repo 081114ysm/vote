@@ -155,6 +155,18 @@ export async function applyElectionAction(action) {
         });
         break;
       }
+      case 'deleteCandidate': {
+        if (!action.categoryId || !action.candidateId) break;
+        const category = await tx.electionCategory.findUnique({
+          where: { id: action.categoryId },
+          include: { candidates: true },
+        });
+        if (!category || category.mode !== 'multi') break;
+        await tx.candidate.delete({
+          where: { id: action.candidateId },
+        });
+        break;
+      }
       case 'voteYesNo': {
         const category = await tx.electionCategory.findUnique({ where: { id: action.categoryId } });
         if (!category || category.mode !== 'yesno') break;

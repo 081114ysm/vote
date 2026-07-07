@@ -148,6 +148,17 @@ function CategoryAdminCard({ category, dispatch, candidateInputs, setCandidateIn
                   >
                     -1
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const confirmed = window.confirm(`${candidate.name} 후보를 삭제할까요?`);
+                      if (!confirmed) return;
+                      void dispatch({ type: 'deleteCandidate', categoryId: category.id, candidateId: candidate.id });
+                    }}
+                    className="rounded-lg bg-rose-100 px-2.5 py-1.5 text-[10px] font-semibold leading-none text-rose-700 transition hover:bg-rose-200"
+                  >
+                    삭제
+                  </button>
                 </div>
               </div>
             ))}

@@ -52,6 +52,11 @@ export function applyMemoryElectionAction(action) {
       if (candidate && candidate.votes > 0) candidate.votes -= 1;
       break;
     }
+    case 'deleteCandidate': {
+      if (!category || category.mode !== 'multi') break;
+      category.candidates = category.candidates.filter((candidate) => candidate.id !== action.candidateId);
+      break;
+    }
     case 'voteYesNo': {
       if (!category || category.mode !== 'yesno') break;
       if (getCategorySummary(category).total >= 197) break;
